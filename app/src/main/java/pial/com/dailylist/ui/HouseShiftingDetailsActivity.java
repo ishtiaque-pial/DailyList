@@ -133,6 +133,8 @@ public class HouseShiftingDetailsActivity extends AppCompatActivity implements I
                     priceET.setError("Required");
                 } else {
                     updatePocket();
+
+
                 }
             }
         });
