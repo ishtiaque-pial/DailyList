@@ -261,7 +261,7 @@ public class ShoppingDetailsActivity extends AppCompatActivity implements ItemCl
 
     private void dialogOfEdit(final int position) {
         dialog.show();
-        ShoppingDetails results = realm.where(ShoppingDetails.class).equalTo("shoppingID",1).equalTo("id",1).findFirst();
+        ShoppingDetails results = realm.where(ShoppingDetails.class).equalTo("shoppingID",1).equalTo("id",position).findFirst();
         try {
             date = dateFormat.parse(dateCurrent);
             causeET.setText(results.getCause());

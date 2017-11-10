@@ -2,7 +2,6 @@ package pial.com.dailylist.root;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,12 +29,6 @@ public class App extends Application {
         super.onCreate();
         Realm.init(this);
         //RealmConfiguration config = new RealmConfiguration.Builder().name("dailyList.realm").build();
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
         RealmConfiguration config = new RealmConfiguration.Builder()
                 .initialData(new Realm.Transaction() {
                     @Override
