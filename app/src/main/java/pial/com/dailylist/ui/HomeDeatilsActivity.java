@@ -201,8 +201,8 @@ public class HomeDeatilsActivity extends AppCompatActivity implements ItemClickL
         homeDetailses = homeDetailses.sort("date");
         df = new SimpleDateFormat("dd-MMM-yyyy");
         ArrayList<TotalList> totalLists = new ArrayList<>();
-        for (int i = 0; i < homeDetailses.size(); i++) {
-            if (i == 0) {
+        for (int i = (homeDetailses.size()-1); i >= 0; i--) {
+            if (i == homeDetailses.size()-1) {
                 Header header = new Header();
                 date = homeDetailses.get(i).getDate();
                 header.setDate(df.format(homeDetailses.get(i).getDate()));

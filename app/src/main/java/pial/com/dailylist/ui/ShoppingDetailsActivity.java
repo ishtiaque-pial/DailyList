@@ -106,8 +106,8 @@ public class ShoppingDetailsActivity extends AppCompatActivity implements ItemCl
         shoppingDetailses = shoppingDetailses.sort("date");
         df = new SimpleDateFormat("dd-MMM-yyyy");
         ArrayList<TotalList> totalLists = new ArrayList<>();
-        for (int i =0; i<shoppingDetailses.size();i++) {
-            if (i == 0) {
+        for (int i =(shoppingDetailses.size()-1); i>=0;i--) {
+            if (i == shoppingDetailses.size()-1) {
                 Header header = new Header();
                 date = shoppingDetailses.get(i).getDate();
                 header.setDate(df.format(shoppingDetailses.get(i).getDate()));

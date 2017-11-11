@@ -188,8 +188,8 @@ public class PocketDetailsActivity extends AppCompatActivity implements ItemClic
         pocketDetailses = pocketDetailses.sort("date");
         df = new SimpleDateFormat("dd-MMM-yyyy");
         ArrayList<TotalList> totalLists = new ArrayList<>();
-        for (int i =0; i<pocketDetailses.size();i++) {
-            if (i == 0) {
+        for (int i =(pocketDetailses.size()-1); i>=0;i--) {
+            if (i == pocketDetailses.size()-1) {
                 Header header = new Header();
                 date = pocketDetailses.get(i).getDate();
                 header.setDate(df.format(pocketDetailses.get(i).getDate()));

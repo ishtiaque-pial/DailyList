@@ -187,8 +187,8 @@ public class HouseShiftingDetailsActivity extends AppCompatActivity implements I
         houseShiftingDetailses = houseShiftingDetailses.sort("date");
         df = new SimpleDateFormat("dd-MMM-yyyy");
         ArrayList<TotalList> totalLists = new ArrayList<>();
-        for (int i =0; i<houseShiftingDetailses.size();i++) {
-            if (i == 0) {
+        for (int i =(houseShiftingDetailses.size()-1); i>=0;i--) {
+            if (i == houseShiftingDetailses.size()-1) {
                 Header header = new Header();
                 date = houseShiftingDetailses.get(i).getDate();
                 header.setDate(df.format(houseShiftingDetailses.get(i).getDate()));
